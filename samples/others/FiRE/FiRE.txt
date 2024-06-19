@@ -1,0 +1,17 @@
+============================================
+=  "FiRE" - Sony Playstation 2 Demo  =
+============================================
+
+This is just the basic fire effect, like
+seen a million before, there is no text
+or greet list just quick 1 hour hack for
+2nd round of #psx2dev compo.
+
+Run with naplink or similar
+
+/Jules - www.mouthshut.net
+
+Released: 1st of June 2002
+
+Music/sfx: no
+Works with PAL/NTSC: yes
