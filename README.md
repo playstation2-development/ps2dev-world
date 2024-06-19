@@ -29,17 +29,7 @@ This repository aims to bring together “everything” about the game and appli
 9. [PS2 Code Source Leaked](#ps2-code-source-leaked)
 10. [Contribute](#contribute)
 
-<<<<<<< HEAD
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-=======
 ------
->>>>>>> e86d951 (update readme)
 <br>
 
 ### Engines
