@@ -1,0 +1,12 @@
+"Car Showroom" - Sony Playstation 2 "demo"
+------------------------------------------
+
+This is my entry for round 5 of the mini demo competition
+held at http://www.thethirdcreation.net.
+
+This requires amigamod.irx (included in the archive) to be
+present in the host directory. Run with naplink.
+
+Code: Sjeep - Modplayer: Vzzrzzn - Gfx: Unknown - Music: Unknown
+
+/Sjeep
