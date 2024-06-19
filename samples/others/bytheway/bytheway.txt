@@ -1,0 +1,17 @@
+============================================
+=  "By The Way" - Sony Playstation 2 Demo  =
+============================================
+
+My first released demo for any system ever
+and it was created in less then 15 hours, so
+don't expect much.
+
+Run with naplink or similar.
+
+I hope you like it. / Jules
+
+Released: 19th of May 2002
+
+Music/sfx: no
+Works with PAL/NTSC: yes
+
