@@ -226,6 +226,7 @@ debuggers, etc., plus their support routines, definitions, and documentation (GD
 - [Cuphead](https://www.youtube.com/@EclipseBladeStudio)
 - [Game With Car](https://github.com/freebytego/gwc-ps2)
 - [PS2 Doom](https://www.youtube.com/watch?v=y6BXCzrufCk)
+- [PrBoom-Plus](https://github.com/Wolf3s/prboom-plus/tree/ps2)
 - [Rock, paper and scissors](https://github.com/GDQR/Rock-paper-and-scissors)
 - [TyraCraft](https://www.youtube.com/@TyraCraft)
 - [TyraTale](https://github.com/Br4k2n/TyraTale)
@@ -264,6 +265,6 @@ Dr Henry S Fortuna - [Nicholas](https://github.com/nicholas477) - [Fewnity](http
 [André Guilherme](https://github.com/Wolf3s) - [Pablo Labs](https://github.com/KreitinnSoftware) -
 [Daniel R.](https://github.com/polybiusproxy) - [aap](https://github.com/aap) - 
 [Br4k2n](https://github.com/Br4k2n) - [FreeByte](https://github.com/freebytego) - 
-GuidoDQR - [CarLoid](https://github.com/CarLoiD)
+[GuidoDQR](https://github.com/GDQR) - [CarLoid](https://github.com/CarLoiD)
 
 PS: If someone is missing from the list, contact me!
