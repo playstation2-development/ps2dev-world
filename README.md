@@ -189,6 +189,7 @@ debuggers, etc., plus their support routines, definitions, and documentation (GD
   - [Car Showroom](https://www.youtube.com/watch?v=cMxbgFGt1UA&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=9&t=19s&pp=gAQBiAQB)
   - [Damn](https://www.youtube.com/watch?v=jERJeWc3Gi4)
   - [Dragons](https://www.youtube.com/watch?v=5wa62sykzvM)
+  - [PS2DEV Oddments](https://www.youtube.com/watch?v=g-6exhU3Y_0)
   - [Clut](https://www.youtube.com/watch?v=xeTE0t7kZvw&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=14&pp=gAQBiAQBsAQB)
   - [Colors](https://www.youtube.com/watch?v=_PkHu1wgnNU&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=10&pp=gAQBiAQBsAQB)
   - [Cube](https://www.youtube.com/watch?v=kOGauz4D0tE&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=1&pp=gAQBiAQB)
