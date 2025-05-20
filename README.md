@@ -187,6 +187,7 @@ debuggers, etc., plus their support routines, definitions, and documentation (GD
   - [Bitmap 2D](https://www.youtube.com/watch?v=pBzF0DnRV8s&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=3&pp=gAQBiAQB)
   - [By The Way - Red Hot Chili Peppers](https://www.youtube.com/watch?v=k1y2-xKf3iw&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=8&pp=gAQBiAQB)
   - [Car Showroom](https://www.youtube.com/watch?v=cMxbgFGt1UA&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=9&t=19s&pp=gAQBiAQB)
+  - [Damn](https://www.youtube.com/watch?v=jERJeWc3Gi4)
   - [Clut](https://www.youtube.com/watch?v=xeTE0t7kZvw&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=14&pp=gAQBiAQBsAQB)
   - [Colors](https://www.youtube.com/watch?v=_PkHu1wgnNU&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=10&pp=gAQBiAQBsAQB)
   - [Cube](https://www.youtube.com/watch?v=kOGauz4D0tE&list=PLeIaNbfDd3fZdN3FwNRnjTNrU30DCdnbt&index=1&pp=gAQBiAQB)
