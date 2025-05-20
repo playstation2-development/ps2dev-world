@@ -1,0 +1,22 @@
+Adventures in Wonderland - A TTC21 demo by Raizor
+--------------------------------------------------
+
+Not a Christmas tree in sight!
+
+This is my latest effort for Blackdroid's Third Creation
+Demo competition.  It's a bit different to my usual style
+but still has a familiar feel (I hope).  
+
+There were a few more bits I'd have liked to add/improve
+but time is short this month...
+
+This demo should run on both PAL and NTSC machines (thanks
+Lion for the testing!).  The timing might be a little weird
+on NTSC as I didn't have time to implement my timing system
+this month (maybe next month).
+
+Well, that's about it for now.
+
+Happy New Year everyone!
+
+Raizor
