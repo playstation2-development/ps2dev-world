@@ -1,0 +1,81 @@
+                                                .set         noat             
+                                                .set         noreorder        
+                                                .global      ENTRYPOINT       
+                                                .global      _start           
+                                                .text                         # 0x00200000
+0x00000000: 00000000                            nop                           
+0x00000004: 00000000                            nop                           
+                             ENTRYPOINT                                       
+                             _start                                           
+
+0x00000008: 0000023c                            lui          $2, %hi(_args_ptr) 
+0x0000000c: 00004224                            addiu        $2, $2, %lo(_args_ptr) 
+0x00000010: 000044ac                            sw           $4, ($2)         
+                             zerobss                                          
+0x00000014: 0000023c                            lui          $2, %hi(_fbss)   
+0x00000018: 0000033c                            lui          $3, %hi(_end)    
+0x0000001c: 00004224                            addiu        $2, $2, %lo(_fbss) 
+0x00000020: 00006324                            addiu        $3, $3, %lo(_end) 
+                             1                                                
+0x00000024: 00000000                            nop                           # EE #2.x bugfix (x = 0-5)
+0x00000028: 00000000                            nop                           # EE #2.x bugfix (x = 0-5)
+0x0000002c: 0000407c                            sq           $0, ($2)         
+0x00000030: 2b084300                            sltu         $1, $2, $3       
+0x00000034: fbff2014                            bne          $1, $0, 1b       
+0x00000038: 10004224                            addiu        $2, $2, 16       
+0x0000003c: 0000043c                            lui          $4, %hi(_gp)     
+0x00000040: 0000053c                            lui          $5, %hi(_stack)  
+0x00000044: 0000063c                            lui          $6, %hi(_stack_size) 
+0x00000048: 0000073c                            lui          $7, %hi(_args)   
+0x0000004c: 0000083c                            lui          $8, %hi(_root)   
+0x00000050: 00008424                            addiu        $4, $4, %lo(_gp) 
+0x00000054: 0000a524                            addiu        $5, $5, %lo(_stack) 
+0x00000058: 0000c624                            addiu        $6, $6, %lo(_stack_size) 
+0x0000005c: 0000e724                            addiu        $7, $7, %lo(_args) 
+0x00000060: 00000825                            addiu        $8, $8, %lo(_root) 
+0x00000064: 25e08000                            move         $28, $4          
+0x00000068: 3c000324                            addiu        $3, $0, 60       
+0x0000006c: 0c000000                            syscall                       
+0x00000070: 25e84000                            move         $29, $2          
+0x00000074: 0000043c                            lui          $4, %hi(_end)    
+0x00000078: 0000053c                            lui          $5, %hi(_heap_size) 
+0x0000007c: 00008424                            addiu        $4, $4, %lo(_end) 
+0x00000080: 0000a524                            addiu        $5, $5, %lo(_heap_size) 
+0x00000084: 3d000324                            addiu        $3, $0, 61       
+0x00000088: 0c000000                            syscall                       
+0x0000008c: 0000000c                            jal          FlushCache       
+0x00000090: 25200000                            move         $4, $0           
+0x00000094: 38000042                            ei                            
+0x00000098: 0000023c                            lui          $2, %hi(_args_ptr) 
+0x0000009c: 00004224                            addiu        $2, $2, %lo(_args_ptr) 
+0x000000a0: 0000438c                            lw           $3, ($2)         
+0x000000a4: 04006224                            addiu        $2, $3, 4        
+0x000000a8: 0000448c                            lw           $4, ($2)         
+0x000000ac: 0000000c                            jal          main             
+0x000000b0: 04004524                            addiu        $5, $2, 4        
+0x000000b4: 32000008                            j            _root            
+0x000000b8: 00000000                            nop                           
+                                                .end         _start           
+                                                .align       3                
+                                                .global      _exit            
+                             _exit                                            
+0x000000c0: 32000008                            j            _root            
+0x000000c4: 00000000                            nop                           
+                                                .end         _exit            
+
+                                                .align       3                
+                             _root                                            
+0x000000c8: 0000023c                            lui          $2, %hi(_args_ptr) 
+0x000000cc: 00004224                            addiu        $2, $2, %lo(_args_ptr) 
+0x000000d0: 0000438c                            lw           $3, ($2)         
+0x000000d4: 0000000c                            jal          SignalSema       
+0x000000d8: 0000648c                            lw           $4, ($3)         
+0x000000dc: 23000324                            addiu        $3, $0, 35       # ExitThread();
+0x000000e0: 0c000000                            syscall                       
+                                                .end         _root            
+                                                .bss                          
+                                                .align       6                
+                             _args              .space       256 + 16*4 + 1*4 
+                                                .data                         
+                             _args_ptr                                        
+                                                .space       4                
