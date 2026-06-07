@@ -104,8 +104,7 @@ This repository aims to bring together “everything” about the game and appli
 
 ### Tutorials
 
-- Installation PS2SDK
-  - [EN - Installation PS2SDK](https://www.youtube.com/watch?v=bsXaR_nWPFY&list=PLeIaNbfDd3faJ6HsjfZfyLgsZLSMcxaUt)
+- Installation PS2SDK Homebrew
   - [PT - Installation PS2SDK](https://www.youtube.com/watch?v=wEVsYnqjOLA&list=PLeIaNbfDd3fYj3fwXQNdg3kCrcYmJIS_A)
 - [Making a PS2 Game - Tom Marks](https://www.youtube.com/watch?v=kX_JpzxR2Qg&list=PLFZsvEE0TWOsFhZr-9KwLED3Rzlwra_Rm)
 
@@ -144,6 +143,7 @@ debuggers, etc., plus their support routines, definitions, and documentation (GD
 - Emulators
   - [DobieStation](https://github.com/PSI-Rockin/DobieStation)
   - [PCSX2](https://pcsx2.net)
+  - [BEEBeM](https://archive.org/details/beebem-1b3)
 - Games
   - [Naturo Shippuden Ultimate Ninja 5 Char Parameter Editor](https://github.com/zMath3usMSF/UN5CharPrmEditor)
 - Others
@@ -236,6 +236,8 @@ debuggers, etc., plus their support routines, definitions, and documentation (GD
 - [TyraCraft](https://www.youtube.com/@TyraCraft)
 - [TyraTale](https://github.com/Br4k2n/TyraTale)
 - [Undertale](https://github.com/KreitinnSoftware/Undertale-PS2)
+- [Beats Of Rage](https://archive.org/details/ps2bor-src-0.1b)
+- [Good Of War: Betrayal](https://github.com/PS2GAMESDEV/Bit-of-War-PS2)
 
 ### PS2 Code Source Leaked
 
