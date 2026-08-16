@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Install necessary packages for PS2DEV, VCLPP and VCL
 RUN apt-get update
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y make wget curl bash git gcc g++ binutils build-essential patch \
     autopoint autoconf automake python3 python3-pip libtool texinfo bison flex gettext \
-    libgmp3-dev libmpfr-dev libmpc-dev zlib1g-dev libgsl-dev unzip 
+    libgmp3-dev libmpfr-dev libmpc-dev zlib1g-dev libgsl-dev unzip libncurses5-dev libncursesw5-dev libtinfo-dev
 
 ARG CMAKE_VERSION=4.0.2
 RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-linux-x86_64.tar.gz && \
@@ -29,6 +29,9 @@ RUN mkdir -p /temp/ps2stuff
 RUN mkdir -p /temp/ps2gl
 RUN mkdir -p /temp/vclpp
 RUN mkdir -p /temp/vcl
+RUN mkdir -p /temp/masp
+RUN mkdir -p /temp/gasp
+RUN mkdir -p /temp/openvcl
 RUN mkdir -p $PS2DEV
 RUN chown -R $USER: $PS2DEV
 
@@ -40,12 +43,20 @@ RUN ./build-all.sh
 # Compile PS2STUFF
 RUN git clone https://github.com/ps2dev/ps2stuff.git /temp/ps2stuff
 WORKDIR "/temp/ps2stuff"
-RUN make
+RUN mkdir build \
+    && cd build \
+    && cmake .. \
+    && make \
+    && make install
 
 # Compile PS2GL
 RUN git clone https://github.com/ps2dev/ps2gl.git /temp/ps2gl
 WORKDIR "/temp/ps2gl"
-RUN make && make install
+RUN mkdir build \
+    && cd build \
+    && cmake .. \
+    && make \
+    && make install
 
 # Compile VCLPP
 RUN git clone https://github.com/glampert/vclpp.git /temp/vclpp
@@ -56,10 +67,35 @@ RUN make
 WORKDIR "/temp/vcl"
 RUN wget https://github.com/h4570/tyra/raw/master/assets/vcl
 
+# Compile MASP
+RUN git clone https://github.com/ps2dev/masp /temp/masp
+WORKDIR "/temp/masp"
+RUN mkdir build \
+    && cd build \
+    && cmake .. \
+    && make \
+    && make install
+
+# Compile GASP
+RUN git clone https://github.com/matrach/gasp.git /temp/gasp
+WORKDIR "/temp/gasp"
+RUN ./configure \
+    && cd bfd \
+    && make \
+    && cd ../libiberty \
+    && make \
+    && cd ../gas \
+    && make gasp-new
+
+# Compile OPENVCL
+RUN git clone https://github.com/playstation2-development/openvcl /temp/openvcl
+WORKDIR "/temp/openvcl"
+RUN make && make install
+
 # ------------------------------------------------------------------------------
 
 # Start from clean image
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Set ENV variables
 ENV PS2DEV=/usr/local/ps2dev
@@ -75,6 +111,8 @@ COPY --from=0 /temp/ps2stuff ${PS2STUFF}
 COPY --from=0 /temp/ps2gl ${PS2GL}
 COPY --from=0 /temp/vcl/vcl /usr/bin/vcl
 COPY --from=0 /temp/vclpp/vclpp /usr/bin/vclpp
+COPY --from=0 /temp/masp/build/src/masp /usr/bin/masp
+COPY --from=0 /temp/gasp/gas/gasp-new /usr/bin/gasp
 
 # Update de system
 RUN apt-get update
@@ -95,6 +133,8 @@ RUN update-binfmts --install i386 /usr/bin/qemu-i386-static --magic '\x7fELF\x01
 # Set chmod
 RUN chmod 755 /usr/bin/vclpp
 RUN chmod 755 /usr/bin/vcl
+RUN chmod 755 /usr/bin/masp
+RUN chmod 755 /usr/bin/gasp
 
 WORKDIR /src
 CMD ["/bin/bash"]
